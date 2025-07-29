@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/mda" mode="merge"/>
+    <filter root="/content/mda" mode="merge"/>
+    <filter root="/content/dam/mda" mode="merge">
+        <exclude pattern="/content/dam/mda(/.*)?"/>
+        <include pattern="/content/dam/mda/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/mda/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/mda" mode="merge"/>
+</workspaceFilter>

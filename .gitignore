@@ -1,0 +1,65 @@
+######################################
+# Maven 
+######################################
+**/target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
+######################################
+
+######################################
+# IDEs
+######################################
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+######################################
+# OS 
+######################################
+.DS_Store
+Thumbs.db
+ehthumbs.dbDesktop.ini
+
+######################################
+# AEM Cloud SDK / VLT 
+######################################
+.crx.quickstart/
+.vlt/
+*.vault.sync.log
+*.vault-work/
+.jcr_root/.vlt-sync-config.properties
+
+######################################
+# Dispatcher (Cloud Manager) 
+######################################
+dispatcher/build
+dispatcher/src/conf.d/environments/
+dispatcher/.cache/
+
+######################################
+# Frontend module (ui.frontend) 
+######################################
+**/node_modules/
+**/dist/
+**/.env
+**/.env.*.local
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/package-lock.json
+**/.parcel-cache/
+**/.turbo/
+
+######################################
+# Logs and temporary files 
+######################################
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*~

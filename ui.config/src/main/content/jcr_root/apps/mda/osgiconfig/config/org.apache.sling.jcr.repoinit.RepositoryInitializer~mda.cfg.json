@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/mda",
+        "create path (nt:unstructured) /content/dam/mda/jcr:content",
+        "set properties on /content/dam/mda/jcr:content\n  set cq:conf{String} to /conf/mda\n  set jcr:title{String} to \"MDA\"\nend"
+    ]
+}

@@ -8,5 +8,6 @@ sync_to_github:
   script:
     - git config --global user.email "s.suresh.gaikar@accenture.com"
     - git config --global user.name "sgaikar"
+    - git checkout -b dev
     - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/ShubhangiGaikar25/mda-poc.git
     - git push github dev:dev

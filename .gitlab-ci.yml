@@ -3,11 +3,13 @@ stages:
 
 sync_to_github:
   stage: sync
-  only:
-    - dev
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "dev"'
   script:
     - git config --global user.email "s.suresh.gaikar@accenture.com"
     - git config --global user.name "sgaikar"
     - git checkout -b dev
     - git remote add github https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/ShubhangiGaikar25/mda-poc.git
+    - git fetch github dev || true  # Fetch latest from GitHub
+    - git merge github/dev --allow-unrelated-histories -m "Merge GitHub dev into GitLab dev before push" || true
     - git push github dev:dev

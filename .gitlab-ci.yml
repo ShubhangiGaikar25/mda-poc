@@ -1,6 +1,22 @@
 stages:
+  - build
   - sync
 
+# Build and Test Job
+build_and_test:
+  stage: build
+  image: maven:3.8.5-jdk-11
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "dev"'
+      when: always
+  script:
+    - echo "Running Maven build and tests for MR to dev..."
+    - mvn -B -U clean install
+  cache:
+    paths:
+      - .m2/repository
+
+# Sync to GitHub Job
 sync_to_github:
   stage: sync
   rules:
